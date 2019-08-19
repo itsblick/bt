@@ -1,0 +1,30 @@
+//Spawn helper function
+void SpawnObject( string type, vector position, vector orientation )
+{
+    auto obj = GetGame().CreateObject( type, position );
+    obj.SetPosition( position );
+    obj.SetOrientation( orientation );
+    obj.SetOrientation( obj.GetOrientation() ); //Collision fix
+    obj.Update();
+    obj.SetAffectPathgraph( true, false );
+    if( obj.CanAffectPathgraph() ) GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( GetGame().UpdatePathgraphRegionByObject, 100, false, obj );
+}
+
+//Your custom spawned objects
+SpawnObject( "Land_Castle_Gate", "8315.070313 295.371002 5994.120117", "100.000008 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Gate", "8394.709961 295.321991 5984.770020", "95.000000 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8314.950195 295.475006 5974.450195", "-90.000000 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8323.169922 295.475006 5958.740234", "-130.000000 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8324.669922 295.591003 6009.250000", "-29.999998 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8341.530273 295.601990 6015.229980", "4.999999 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8387.269531 295.856995 6001.089844", "50.000004 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8370.240234 295.694000 6010.750000", "25.000002 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20", "8355.929688 295.557007 6014.390137", "10.000002 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8387.400391 295.462006 5967.319824", "130.000000 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8373.669922 295.455994 5954.540039", "160.000000 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8356.469727 295.489990 5949.020020", "179.999985 0.000000 0.000000" );
+SpawnObject( "Land_Castle_Wall1_20_Turn", "8339.089844 295.459991 5950.100098", "-158.000000 0.000000 0.000000" );
+SpawnObject( "MSFC_MapObject_WeaponTrader_Tent", "8357.589844 293.632996 5968.540039", "-175.000000 0.000000 0.000000" );
+SpawnObject( "FP4_GunShop", "8349.250000 293.298004 5980.649902", "-175.000000 0.000000 0.000000" );
+SpawnObject( "MSFC_MapObject_Gaz", "8376.099609 293.382996 5995.990234", "-29.999998 0.000000 0.000000" );
+SpawnObject( "Land_Misc_Well_Pump_Blue", "8345.887695 292.495544 6007.790527", "0.000000 0.000000 0.000000" );
